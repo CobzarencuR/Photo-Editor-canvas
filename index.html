@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>`Photo Editor</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="editor-container">
+        <div class="texts">
+            <div id="effect-options" style="display: none;">
+                <label for="effect-select">Effects:</label>
+                <select id="effect-select">
+                    <option value="grayscale">Black & White</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="invert">Color Inversion</option>
+                </select>
+            </div>
+            <div id="dimension-options" style="display: none;">
+                <div class="dimension-width">
+                    <label for="new-width-number">New width:</label>
+                    <input type="number" id="new-width-number" placeholder="Add width" />
+                </div>
+                <div class="dimension-height">
+                    <label for="new-height-number">New height:</label>
+                    <input type="number" id="new-height-number" placeholder="Add height" />
+                </div>
+            </div>
+            <div id="text-options" style="display: none;">
+                <div class="text-line">
+                    <label for="text-input">Text:</label>
+                    <input type="text" id="text-input" placeholder="Add text" />
+                </div>
+                <div class="font-line">
+                    <label for="font-size">Font:</label>
+                    <input type="number" id="font-size" placeholder="Font size" />
+                </div>
+                <div class="color-line">
+                    <label for="text-color">Color:</label>
+                    <input type="color" id="text-color" value="#000000" />
+                </div>
+                <div class="positionX-line">
+                    <label for="text-x">X value:</label>
+                    <input type="number" id="text-x" placeholder="Add X value" />
+                </div>
+                <div class="positionY-line">
+                    <label for="text-y">Y value:</label>
+                    <input type="number" id="text-y" placeholder="Add Y value" />
+                </div>
+            </div>
+        </div>
+        <div class="image-content">
+            <h1>Photo Editor</h1>
+            <div class="upload-area" id="upload-area">
+                <p>Drag and drop an image or <label for="file-input" class="upload-label">upload one</label>
+                </p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+
+            <canvas id="canvas" style="display: none;"></canvas>
+
+            <canvas id="histogramCanvas" width="500" height="100"
+                style="border: 1px solid #ccc; display: none;"></canvas>
+        </div>
+
+        <div class="buttons">
+            <button id="crop-btn" style="display: none;">Crop</button>
+            <button id="effect-btn" style="display: none;">Apply</button>
+            <button id="scale-btn" style="display: none;">Scale</button>
+
+            <button id="add-text-btn" style="display: none;">Add text</button>
+
+            <button id="delete-btn" style="display: none;">Delete selection</button>
+
+            <button id="save-btn" style="display: none;">Save image</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
